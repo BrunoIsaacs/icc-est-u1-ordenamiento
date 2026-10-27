@@ -1,23 +1,26 @@
 package models;
 
 public class Estudiante {
-    private String nombre;
+    private String name;
     private double nota;
-//constructor lleno
-    public Estudiante(String nombre, double nota) {
-        this.nombre = nombre;
+
+    //Constructor lleno
+    public Estudiante(String name, double nota){
+        this.name = name;
         this.nota = nota;
     }
-//constructor vacio
-    public Estudiante() {
-    }
-    
-    public String getNombre() {
-        return nombre;
+
+    //Constructor vacio
+    public Estudiante(){
+
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getNota() {
@@ -27,7 +30,9 @@ public class Estudiante {
     public void setNota(double nota) {
         this.nota = nota;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Estudiante [name=" + name + ", nota=" + nota + "]";
+    }
 }

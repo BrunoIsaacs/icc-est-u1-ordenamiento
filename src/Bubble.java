@@ -18,21 +18,31 @@ public class Bubble {
         }
     }
 
-    public void bubbleSort(Estudiante[] estudiantes) {
-        int n = estudiantes.length;
-        for (int i = 0; i < n - 1; i++) {
+    public void sortEstudiantesN(Estudiante[] estudiantes) {
+        sortEstudiantes(estudiantes, (primero, segundo) ->
+                Double.compare(primero.getNota(), segundo.getNota()));
+    }
+
+    public void sortEstudiantesName(Estudiante[] estudiantes) {
+        sortEstudiantes(estudiantes, (primero, segundo) ->
+                primero.getName().compareToIgnoreCase(segundo.getName()));
+    }
+
+    private void sortEstudiantes(Estudiante[] estudiantes,
+            java.util.Comparator<Estudiante> comparador) {
+        for (int i = 0; i < estudiantes.length - 1; i++) {
             boolean cambio = false;
-            for (int j = 0; j < n - i - 1; j++) {
-                if (estudiantes[j].getNota() > estudiantes[j + 1].getNota()) {
-                    Estudiante temp = estudiantes[j];
+            for (int j = 0; j < estudiantes.length - i - 1; j++) {
+                if (comparador.compare(estudiantes[j], estudiantes[j + 1]) > 0) {
+                    Estudiante temporal = estudiantes[j];
                     estudiantes[j] = estudiantes[j + 1];
-                    estudiantes[j + 1] = temp;
+                    estudiantes[j + 1] = temporal;
                     cambio = true;
                 }
             }
             if (!cambio) {
                 break;
-                }
+            }
         }
     }
 }
