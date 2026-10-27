@@ -1,15 +1,40 @@
+import models.src.Selection;
+import src.InsertionSort;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+
+        int[] original = {5, 6, 4, 1, 2, 3};
+        int[] b = original.clone();
+        int[] c = original.clone();
+        int[] d = original.clone();
+
+        // Bubble Sort
+        System.out.println("Bubble");
+        Bubble bubble = new Bubble();
+        printArreglo(b);
+        bubble.sort(b);
+        printArreglo(b);
+
+        // Selection Sort
+        System.out.println("Selection");
+        Selection selection = new Selection();
+        printArreglo(c);
+        selection.sort(c);
+        printArreglo(c);
+
+        // Insertion Sort
+        System.out.println("Insertion");
+        InsertionSort insertion = new InsertionSort();
+        printArreglo(d);
+        insertion.sort(d);
+        printArreglo(d);
     }
-    public static void insertion(int[] a) {
-        for (int i = 1 ; i < a.length; i++){
-            int key = a[i];
-            int j = i-1;
-            while (j >= 0 && a[j] > key){
-                a[j + 1] = a[j];
-                j--; 
-            }
-            a[j + 1] = key;        }
+
+    public static void printArreglo(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " - ");
+        }
+        System.out.println();
     }
 }
