@@ -1,3 +1,7 @@
+
+/**
+ * Author: Bruno Obelencio
+ */
 package models.src;
 
 public class Selection {

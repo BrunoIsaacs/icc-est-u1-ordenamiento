@@ -1,3 +1,7 @@
+
+/**
+ * Author: Bruno Obelencio
+ */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -30,8 +34,6 @@ public class App {
 
         // Selection Sort
         System.out.println("--Selection--");
-        System.out.print("Original: ");
-        printArreglo(c);
         Selection selection = new Selection();
         selection.sort(c);
 
